@@ -42,7 +42,7 @@ Removes variables storing references to COM objects to further release resources
 
 1. Install the ImportExcel module:
     ```powershell
-    Install-Module -Name ImportExcel -Force -SkipPublisherCheck
+    Install-Module -Name ImportExcel
     ```
 
 2. Customize the script:
