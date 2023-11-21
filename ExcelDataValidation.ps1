@@ -19,7 +19,7 @@ function Get-ColumnIndexFromLetter {
 # Open Excel and load the file
 $excel = New-Object -ComObject Excel.Application
 $excel.Visible = $true  # You can set this to $false if you want Excel to run in the background
-$workbook = $excel.Workbooks.Open("C:\Users\jalmeida26\OneDrive - DXC Production\Desktop\Projeto ValidacaoDados\WorkFile.xlsx")
+$workbook = $excel.Workbooks.Open("your\file\path\File.xlsx")
 
 if ($workbook -eq $null) {
     Write-Host "Failed to open the workbook."
@@ -29,7 +29,7 @@ if ($workbook -eq $null) {
 }
 
 # Specify the sheet name
-$sheetName = "Devices"
+$sheetName = "your\sheet\name"
 
 # Select the sheet by name
 $sheet = $workbook.Sheets.Item($sheetName)
@@ -112,7 +112,7 @@ foreach ($columnLetter in $columnsToCheck) {
 }
 
 # Create the .txt file with messages of empty columns
-$fileName = "$env:USERPROFILE\OneDrive - DXC Production\Desktop\MissingDataExcel.txt"
+$fileName = "your\save\path\file.txt"
 $emptyColumnMessages | Out-File -FilePath $fileName
 
 # Close Excel
